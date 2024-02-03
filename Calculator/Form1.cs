@@ -6,5 +6,13 @@ namespace Calculator
         {
             InitializeComponent();
         }
+
+        private void numberclick(object sender, EventArgs e)
+        {
+            string buttonText = ((Button)sender).Text;
+            textBox1.Text += buttonText;
+        }
+
+      
     }
 }
