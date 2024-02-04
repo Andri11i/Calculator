@@ -12,11 +12,8 @@ namespace Calculator
         public string OldResult { get; set; } = "0";
 
         public void AddSymbol(string symbol)
-        {
-            if (CalcResult == "0") CalcResult = "";
+        {    
             CalcResult += symbol;
-
-            var Sdouble = Convert.ToDouble(symbol);
         }
 
         public void SaveCR()
