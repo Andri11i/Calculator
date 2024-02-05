@@ -22,7 +22,13 @@ namespace Calculator
                     calcres = result.Subtraction(Convert.ToDouble(result.OldResult), Convert.ToDouble(result.CalcResult));
                     break;
                 case "/":
-                    calcres = result.Division(Convert.ToDouble(result.OldResult), Convert.ToDouble(result.CalcResult));
+                    if (result.CalcResult != "0")
+                        calcres = result.Division(Convert.ToDouble(result.OldResult), Convert.ToDouble(result.CalcResult));
+                    else
+                    {
+                        calcres = 0;
+                        label1.Text = "На ноль делить нельзя";
+                    }
                     break;
                 case "*":
                     calcres = result.Multiplication(Convert.ToDouble(result.OldResult), Convert.ToDouble(result.CalcResult));
@@ -110,7 +116,7 @@ namespace Calculator
             }
         }
 
-    
+
 
         private void btnDIVISION_Click(object sender, EventArgs e)
         {
@@ -159,6 +165,28 @@ namespace Calculator
             {
                 result.CalcResult = result.CalcResult.Remove(result.CalcResult.Length - 1);
                 if (result.CalcResult == "") result.CalcResult = "0";
+                UpdtTB();
+            }
+        }
+
+        private void btnSQR_Click(object sender, EventArgs e)
+        {
+            if (result.CalcResult != "0")
+            {
+                double temp = Convert.ToDouble(result.CalcResult) * Convert.ToDouble(result.CalcResult);
+                label1.Text = "sqr(" + result.CalcResult + ")";
+                result.CalcResult = temp.ToString();
+                UpdtTB();
+            }
+        }
+
+        private void btnSQRT_Click(object sender, EventArgs e)
+        {
+            if (result.CalcResult != "0")
+            {
+                double temp = Math.Sqrt(Convert.ToDouble(result.CalcResult));
+                label1.Text = "sqrt(" + result.CalcResult + ")";
+                result.CalcResult = temp.ToString();
                 UpdtTB();
             }
         }

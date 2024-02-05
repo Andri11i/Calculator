@@ -49,6 +49,8 @@
             btnEqual = new Button();
             btnDOT = new Button();
             btnBACKSPACE = new Button();
+            btnSQR = new Button();
+            btnSQRT = new Button();
             SuspendLayout();
             // 
             // button1
@@ -278,11 +280,35 @@
             btnBACKSPACE.UseVisualStyleBackColor = true;
             btnBACKSPACE.Click += btnBACKSPACE_Click;
             // 
+            // btnSQR
+            // 
+            btnSQR.Font = new Font("Segoe UI", 25F);
+            btnSQR.Location = new Point(93, 120);
+            btnSQR.Name = "btnSQR";
+            btnSQR.Size = new Size(75, 75);
+            btnSQR.TabIndex = 22;
+            btnSQR.Text = "x²";
+            btnSQR.UseVisualStyleBackColor = true;
+            btnSQR.Click += btnSQR_Click;
+            // 
+            // btnSQRT
+            // 
+            btnSQRT.Font = new Font("Segoe UI", 25F);
+            btnSQRT.Location = new Point(12, 120);
+            btnSQRT.Name = "btnSQRT";
+            btnSQRT.Size = new Size(75, 75);
+            btnSQRT.TabIndex = 23;
+            btnSQRT.Text = "√x";
+            btnSQRT.UseVisualStyleBackColor = true;
+            btnSQRT.Click += btnSQRT_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(425, 533);
+            Controls.Add(btnSQRT);
+            Controls.Add(btnSQR);
             Controls.Add(btnBACKSPACE);
             Controls.Add(btnDOT);
             Controls.Add(btnEqual);
@@ -335,5 +361,7 @@
         private Button btnEqual;
         private Button btnDOT;
         private Button btnBACKSPACE;
+        private Button btnSQR;
+        private Button btnSQRT;
     }
 }
