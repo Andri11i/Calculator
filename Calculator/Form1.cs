@@ -33,6 +33,7 @@ namespace Calculator
                 case "*":
                     calcres = result.Multiplication(Convert.ToDouble(result.OldResult), Convert.ToDouble(result.CalcResult));
                     break;
+
             }
             return calcres;
         }
@@ -189,6 +190,32 @@ namespace Calculator
                 result.CalcResult = temp.ToString();
                 UpdtTB();
             }
+        }
+
+        private void btnPERCENT_Click(object sender, EventArgs e)
+        {
+            if (action != "")
+            {
+
+                double calcres1 = (Convert.ToDouble(result.OldResult) / 100) * Convert.ToDouble(result.CalcResult);
+                result.CalcResult = calcres1.ToString();
+                label1.Text += " " + result.CalcResult + " = ";
+                double calcres = Equals(action);
+                result.OldResult = calcres.ToString();
+                textBox1.Text = calcres.ToString();
+                result.CalcResult = calcres.ToString();
+                action = "";
+            }
+        }
+
+        private void btnNEGATE_Click(object sender, EventArgs e)
+        {
+            
+            if (result.CalcResult != "0")
+            {
+                result.CalcResult = (-Convert.ToDouble(result.CalcResult)).ToString();
+                UpdtTB();
+            } 
         }
     }
 }

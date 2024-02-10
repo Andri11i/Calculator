@@ -51,6 +51,8 @@
             btnBACKSPACE = new Button();
             btnSQR = new Button();
             btnSQRT = new Button();
+            btnPERCENT = new Button();
+            btnNEGATE = new Button();
             SuspendLayout();
             // 
             // button1
@@ -302,11 +304,35 @@
             btnSQRT.UseVisualStyleBackColor = true;
             btnSQRT.Click += btnSQRT_Click;
             // 
+            // btnPERCENT
+            // 
+            btnPERCENT.Font = new Font("Segoe UI", 25F);
+            btnPERCENT.Location = new Point(255, 444);
+            btnPERCENT.Name = "btnPERCENT";
+            btnPERCENT.Size = new Size(75, 75);
+            btnPERCENT.TabIndex = 24;
+            btnPERCENT.Text = "%";
+            btnPERCENT.UseVisualStyleBackColor = true;
+            btnPERCENT.Click += btnPERCENT_Click;
+            // 
+            // btnNEGATE
+            // 
+            btnNEGATE.Font = new Font("Segoe UI", 25F);
+            btnNEGATE.Location = new Point(336, 444);
+            btnNEGATE.Name = "btnNEGATE";
+            btnNEGATE.Size = new Size(75, 75);
+            btnNEGATE.TabIndex = 25;
+            btnNEGATE.Text = "±";
+            btnNEGATE.UseVisualStyleBackColor = true;
+            btnNEGATE.Click += btnNEGATE_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(425, 533);
+            Controls.Add(btnNEGATE);
+            Controls.Add(btnPERCENT);
             Controls.Add(btnSQRT);
             Controls.Add(btnSQR);
             Controls.Add(btnBACKSPACE);
@@ -363,5 +389,7 @@
         private Button btnBACKSPACE;
         private Button btnSQR;
         private Button btnSQRT;
+        private Button btnPERCENT;
+        private Button btnNEGATE;
     }
 }
